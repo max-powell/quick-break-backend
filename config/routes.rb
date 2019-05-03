@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:index, :create, :destroy]
 
-  get '/login', to: 'users#login'
+  get '/login/:name', to: 'users#login'
 end

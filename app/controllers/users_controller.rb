@@ -19,6 +19,15 @@ class UsersController < ApplicationController
     render json: {message: 'user destroyed'}
   end
 
+  def login
+    user = User.find_by_name(params[:name])
+    if user
+      render json: user
+    else
+      render json: {error: 'User not found'}
+    end
+  end
+
   private
 
   def user_params
