@@ -6,4 +6,6 @@ Rails.application.routes.draw do
     resources :locations, only: [:index, :create, :update]
   end
   resources :users, only: [:index, :create, :destroy]
+
+  get '/login', to: 'users#login'
 end
