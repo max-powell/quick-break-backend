@@ -10,6 +10,15 @@ User.destroy_all
 Trip.destroy_all
 
 max = User.create(name: 'Max')
+kai = User.create(name: 'Kai')
+ali = User.create(name: 'Ali')
+fez = User.create(name: 'Fez')
 
-trip = max.trips.create(name: 'Test trip', start_date: Date.today, duration: 4)
-trip2 = max.trips.create(name: 'Test trip 2')
+trip = kai.trips.create(name: 'Boys Trip', location: 'Ibiza', trip_type: 'beach', duration: 7, month: '4')
+trip2 = kai.trips.create(name: 'Kai test trip', location: 'France', trip_type: 'city', duration: 7, month: '2')
+trip3 = max.trips.create(name: 'Temples', location: 'India', trip_type: 'adventure', duration: 7, month: '10')
+trip4 = max.trips.create(name: 'Max test trip', location: 'Australia', trip_type: 'beach', duration: 7, month: '7')
+trip5 = ali.trips.create(name: 'Snow', location: 'Canada', trip_type: 'ski', duration: 7, month: '3')
+trip6 = ali.trips.create(name: 'Ali test trip', location: 'Belgium', trip_type: 'city', duration: 7, month: '9')
+trip7 = fez.trips.create(name: 'Safari', location: 'Kenya', trip_type: 'adventure', duration: 7, month: '10')
+trip8 = fez.trips.create(name: 'Fez test trip', location: 'Japan', trip_type: 'city', duration: 7, month: '1')

@@ -33,7 +33,7 @@ class UserTripsController < ApplicationController
   private
 
   def user_trip_params
-    params.require(:user_trip).permit(:user_id, :trip_id, :location_selected)
+    params.require(:user_trip).permit(:user_id, :trip_id)
   end
 
 end
