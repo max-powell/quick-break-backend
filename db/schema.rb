@@ -26,8 +26,11 @@ ActiveRecord::Schema.define(version: 2019_05_02_125300) do
 
   create_table "trips", force: :cascade do |t|
     t.string "name"
+    t.string "location"
     t.date "start_date"
+    t.string "trip_type"
     t.integer "duration", default: 1
+    t.integer "month"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -43,7 +46,6 @@ ActiveRecord::Schema.define(version: 2019_05_02_125300) do
   create_table "user_trips", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "trip_id"
-    t.boolean "location_selected", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["trip_id"], name: "index_user_trips_on_trip_id"
