@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2019_05_02_125300) do
 
   create_table "unavailable_dates", force: :cascade do |t|
     t.bigint "user_trip_id"
-    t.date "date"
+    t.string "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_trip_id"], name: "index_unavailable_dates_on_user_trip_id"
