@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_02_125300) do
+ActiveRecord::Schema.define(version: 2019_05_09_093251) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2019_05_02_125300) do
     t.integer "month"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "unavailable_dates", default: ""
   end
 
   create_table "unavailable_dates", force: :cascade do |t|
