@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_02_125300) do
+ActiveRecord::Schema.define(version: 2019_05_09_093251) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,14 +33,15 @@ ActiveRecord::Schema.define(version: 2019_05_02_125300) do
     t.integer "month"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "unavailable_dates", default: ""
   end
 
   create_table "unavailable_dates", force: :cascade do |t|
-    t.bigint "user_trip_id"
-    t.date "date"
+    t.bigint "trip_id"
+    t.string "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_trip_id"], name: "index_unavailable_dates_on_user_trip_id"
+    t.index ["trip_id"], name: "index_unavailable_dates_on_trip_id"
   end
 
   create_table "user_trips", force: :cascade do |t|
@@ -59,7 +60,7 @@ ActiveRecord::Schema.define(version: 2019_05_02_125300) do
   end
 
   add_foreign_key "locations", "trips"
-  add_foreign_key "unavailable_dates", "user_trips"
+  add_foreign_key "unavailable_dates", "trips"
   add_foreign_key "user_trips", "trips"
   add_foreign_key "user_trips", "users"
 end
