@@ -15,18 +15,10 @@ ActiveRecord::Schema.define(version: 2019_05_09_093251) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "locations", force: :cascade do |t|
-    t.bigint "trip_id"
-    t.string "name"
-    t.integer "votes", default: 0
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["trip_id"], name: "index_locations_on_trip_id"
-  end
-
   create_table "trips", force: :cascade do |t|
     t.string "name"
-    t.string "location"
+    t.string "country"
+    t.string "city"
     t.date "start_date"
     t.string "trip_type"
     t.integer "duration", default: 1
@@ -59,7 +51,6 @@ ActiveRecord::Schema.define(version: 2019_05_09_093251) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "locations", "trips"
   add_foreign_key "unavailable_dates", "trips"
   add_foreign_key "user_trips", "trips"
   add_foreign_key "user_trips", "users"

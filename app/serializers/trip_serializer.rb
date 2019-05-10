@@ -1,4 +1,4 @@
 class TripSerializer < ActiveModel::Serializer
-  attributes :id, :name, :location, :month, :duration, :users, :unavailable_dates
+  attributes :id, :name, :country, :city, :month, :duration, :users, :unavailable_dates
 
 end

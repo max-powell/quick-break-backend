@@ -6,7 +6,8 @@ class UserSerializer < ActiveModel::Serializer
       {
         id: t.id,
         name: t.name,
-        location: t.location,
+        country: t.country,
+        city: t.city,
         month: t.month,
         duration: t.duration,
         trip_type: t.trip_type,
